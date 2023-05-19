@@ -1,0 +1,207 @@
+solution(Choice,Budget,Place):- Choice=='cold_place', Budget<20000, Place='Leh-Ladakh,Shillong,Kashmir, Srinagar'.
+solution(Choice,Budget,Place):- Choice=='cold_place', Budget>20000, Place='Denali,USA, Eureka,Canada, Vostok station,Antartica'.
+
+solution(Choice,Budget,Place):- Choice=='water_park', Budget<20000, Place='Worlds of Wonder, Water Kingdom, Queensland, Funtasia Island '.
+solution(Choice,Budget,Place):- Choice=='water_park', Budget>20000, Place='Aquatica,Florida, Area 47,Austria, Siam Park,Spain, Watercube water_park,Beijing'.
+
+solution(Choice,Budget,Place):- Choice=='museum', Budget<20000, Place='Indian museum, National Rail museum, Salar Jung museum, Victoria Mmeorial, Patang Kite museum'.
+solution(Choice,Budget,Place):- Choice=='museum', Budget>20000, Place='Louvre museum,Paris, The British museum,London, Rijksmuseum,Ambesterdam, The National Gallery,London'.
+
+solution(Choice,Budget,Place):- Choice=='boat_ride', Budget<20000, Place='Aleppey, Taboo,Varansi, Mumbai, Goa'.
+solution(Choice,Budget,Place):- Choice=='boat_ride', Budget>20000, Place='Golden Gate Ferry,USA, Venice Vaporetto,Venice, Cruising Milford Sound,New Zealand, Star Ferry,Hong Kong'.
+
+solution(Choice,Budget,Place):- Choice=='beach', Budget<20000, Place='Varkala,Kerala, Gokarna,Karnataka, Palolem,South Goa, Agonda,South Goa, Muzhappilangad,Kerala'.
+solution(Choice,Budget,Place):- Choice=='beach', Budget>20000, Place='Dune du Pyla,France, Shoal Bay,Antigua, Cala Saona,Forentera, Glass beach,California, Starfish beach,Panama'.
+
+
+
+solution(Choice,Budget,Place):- Choice=='desert', Budget<20000, Place='Bikaner, Jaisalmer, Jodhpur,Nubra Valley'.
+solution(Choice,Budget,Place):- Choice=='desert', Budget>20000, Place='The Arabian Dessert, The Thar Dessert, The Black Rock Dessert, The Wahiba Sands, The SaharaDessert'.
+
+solution(Choice,Budget,Place):- Choice=='heritage_walk', Budget<20000, Place='Taj Mahal, Hampi, Khajuraho Temples, Sanchi Stupa'.
+solution(Choice,Budget,Place):- Choice=='heritage_walk', Budget>20000, Place='Typography Walk, Street Art Walk, Midnight Calcutta Walks'.
+
+solution(Choice,Budget,Place):- Choice=='skiing', Budget<20000, Place='Auli, Manali, Kufri, Narkanda'.
+solution(Choice,Budget,Place):- Choice=='skiing', Budget>20000, Place='Zermatt,Switzerland, Saint Moritz, Niseko, Courchevel Tourisme'.
+
+solution(Choice,Budget,Place):- Choice=='camp', Budget<20000, Place='Kumbh camp, Dahiya camping'.
+solution(Choice,Budget,Place):- Choice=='camp', Budget>20000, Place='Kenya, Le Havre, Midi-Pyreness, Australia'.
+
+solution(Choice,Budget,Place):- Choice=='hill', Budget<20000, Place='Anantagiri hills, Ezhimala, Dhupgarh, Ajodhya hills'.
+solution(Choice,Budget,Place):- Choice=='hill', Budget>20000, Place='Cyprus hills,Russia, Ooty,India, Thredbo,Australia, Zermatt,Switzerland'.
+
+
+
+solution(Choice,Budget,Place):- Choice=='hill_station', Budget<20000, Place='Chail, Wilson hills, Kufri, Ponmudi'.
+solution(Choice,Budget,Place):- Choice=='hill_station', Budget>20000, Place='Hallstatt,Austria, Faroe Island,Denmark, Lecco,Italy, Tyrol,Austria, Wengnen,Switzerland'.
+
+solution(Choice,Budget,Place):- Choice=='waterfall', Budget<20000, Place='Dudhsagar, NohKaLikai, Jog Falls, Kunchikal Falls'.
+solution(Choice,Budget,Place):- Choice=='waterfall', Budget>20000, Place='Angel Falls, Niagra Falls, Victoria Falls, Iguazu Falls'.
+
+solution(Choice,Budget,Place):- Choice=='cave', Budget<20000, Place='Ajanta Ellora caves, Bhimbetka caves, Bagh caves, Badami caves, Udayagiri caves'.
+solution(Choice,Budget,Place):- Choice=='cave', Budget>20000, Place='Mammoth cave National Park,USA, Blue Grotto,Italy, Fingal cave,Scotland, Waitomo Glowworm caves,New Zealand'.
+
+solution(Choice,Budget,Place):- Choice=='national_park', Budget<20000, Place='Jim Corbette national park, Ranthambore national park, Gir national park, Kaziranga national park, Kanha tiger reserve'.
+solution(Choice,Budget,Place):- Choice=='national_park', Budget>20000, Place='Yellowstone national park, Kruger national park, Yosemite national park'.
+
+
+
+start:-
+    write('What is your name? '),
+    read(Name),nl,
+    write('Hello '),write(Name),nl,
+    write('Expert recommendation system for your travel'),nl,
+    write('Please answer the questions below'),nl,
+    write('Are you fully vaccinated and have vaccination certificate(In case, you wanna travel with us kindly answer Yes)? '),nl,
+    read(Ans),nl,
+    write('Let us start this system to find the best place for you! '),nl,nl,
+    write('What is your preferred weather at your destined location? '),nl,
+    write('summer or winter or monsoon ? '), nl,
+    read(Weat),nl,
+    write('Choose one of the following places to visit'),nl,
+    write('Summer--> cold_place or water_park or museum or boat_ride or beach'),nl,
+    write('Winter--> desert or heritage_walk or skiing or camp or hill'),nl,
+    write('Monsoon--> hill_station or waterfall or cave or national_park'),nl,
+    read(Choic),nl,
+    (
+        Choic=='cold_place'->
+        write('What is your approximate budget?'), nl,
+        read(Bud),
+        solution(Choic,Bud,Pl),
+        write('You can visit following places:'), nl,
+        write(Pl), nl,
+        write('Enjoy!')
+        ;
+        (
+            Choic=='museum'->
+            write('What is your approximate budget?'), nl,
+            read(Bud),
+            solution(Choic,Bud,Pl),
+            write('You can visit the following places:'), nl,
+            write(Pl), nl,nl,
+            write('Enjoy!')
+            ;
+            (
+                Choic=='boat_ride'->
+                write('What is your approximate budget?'), nl,
+                read(Bud),
+                solution(Choic,Bud,Pl),
+                write('You can visit the following places:'), nl,
+                write(Pl), nl,nl,
+                write('Enjoy!')
+                ;
+                (
+                    Choic=='beach'->
+                    write('What is your approximate budget?'), nl,
+                    read(Bud),
+                    solution(Choic,Bud,Pl),
+                    write('You can visit the following places:'), nl,
+                    write(Pl), nl,nl,
+                    write('Enjoy!')
+                    ;
+                    (
+                        Choic=='desert'->
+                        write('What is your approximate budget?'), nl,
+                        read(Bud),
+                        solution(Choic,Bud,Pl),
+                        write('You can visit the following places:'), nl,
+                        write(Pl), nl,nl,
+                        write('Enjoy!')
+                        ;
+                        (
+                            Choic=='heritage_walk'->
+                            write('What is your approximate budget?'), nl,
+                            read(Bud),
+                            solution(Choic,Bud,Pl),
+                            write('You can visit the following places:'), nl,
+                            write(Pl), nl,nl,
+                            write('Enjoy!')
+                            ;
+                            (
+                                Choic=='skiing'->
+                                write('What is your approximate budget?'), nl,
+                                read(Bud),
+                                solution(Choic,Bud,Pl),
+                                write('You can visit the following places:'), nl,
+                                write(Pl), nl,nl,
+                                write('Enjoy!')
+                                ;
+                                (
+                                    Choic=='camp'->
+                                    write('What is your approximate budget?'), nl,
+                                    read(Bud),
+                                    solution(Choic,Bud,Pl),
+                                    write('You can visit the following places:'), nl,
+                                    write(Pl), nl,nl,
+                                    write('Enjoy!')
+                                    ;
+                                    (
+                                        Choic=='hill'->
+                                        write('What is your approximate budget?'), nl,
+                                        read(Bud),
+                                        solution(Choic,Bud,Pl),
+                                        write('You can visit the following places:'), nl,
+                                        write(Pl), nl,nl,
+                                        write('Enjoy!')
+                                        ;
+                                        (
+                                            Choic=='hill_station'-
+                                            write('What is your approximate budget?'), nl,
+                                            read(Bud),
+                                            solution(Choic,Bud,Pl),
+                                            write('You can visit the following places:'), nl,
+                                            write(Pl), nl,nl,
+                                            write('Enjoy!')
+                                            ;
+                                            (
+                                                Choic=='waterfall'->
+                                                write('What is your approximate budget?'), nl,
+                                                read(Bud),
+                                                solution(Choic,Bud,Pl),
+                                                write('You can visit the following places:'), nl,
+                                                write(Pl), nl,nl,
+                                                write('Enjoy!')
+                                                ;
+                                                (
+                                                    Choic=='cave'->
+                                                    write('What is your approximate budget?'), nl,
+                                                    read(Bud),
+                                                    solution(Choic,Bud,Pl),
+                                                    write('You can visit the following places:'), nl,
+                                                    write(Pl), nl,nl,
+                                                    write('Enjoy!')
+                                                    ;
+                                                    (
+                                                        Choic=='national_park'->
+                                                        write('What is your approximate budget?'), nl,
+                                                        read(Bud),
+                                                        solution(Choic,Bud,Pl),
+                                                        write('You can visit the following places:'), nl,
+                                                        write(Pl), nl,nl,
+                                                        write('Enjoy!')
+                                                        ;
+                                                        (
+                                                            Choic=='water_park'->
+                                                            write('What is your approximate budget?'), nl,
+                                                            read(Bud),
+                                                            solution(Choic,Bud,Pl),
+                                                            write('You can visit the following places:'), nl,
+                                                            write(Pl), nl,nl,
+                                                            write('Enjoy!')
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    ).
+
+
+
